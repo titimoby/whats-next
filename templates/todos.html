@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GitLab Todos</title>
+</head>
+
+<body>
+    <h1>GitLab Todos</h1>
+    <ul>
+        {% for todo in todos %}
+        <li># {{ todo['target']['iid'] }} - <a href="{{ todo['target_url'] }}">{{ todo['target']['title'] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
