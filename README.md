@@ -8,6 +8,8 @@ In its simplest form, you will have to install dependencies with:
 
 ```pip install -r requirements.txt```
 
+Copy config.py.template to config.py and fill the variables in it.
+
 Then run the app through:
 
 ```python3 whats_next.py```
