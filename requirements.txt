@@ -1,2 +1,4 @@
 python-gitlab>=3.9
 flask
+typer
+rich
