@@ -1,23 +1,8 @@
-import gitlab
 from flask import Flask, render_template
-import config
+from gitlab_handling import get_gitlab_todos
 
 # Initialize Flask app
 webapp = Flask(__name__)
-
-
-# Function to get todos from GitLab
-def get_gitlab_todos():
-    # Initialize GitLab
-    gl = gitlab.Gitlab(url=config.gitlab_server, private_token=config.gitlab_token)
-
-    # Get project
-    project = gl.projects.get(config.gitlab_project_id)
-
-    # Get todos
-    todos = gl.todos.list(all=True)
-    return [todo.attributes for todo in todos]
-
 
 # Route to display todos
 @webapp.route("/")
