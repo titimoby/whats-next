@@ -10,13 +10,13 @@ def show_todo_list():
     todos = get_gitlab_todos()
     table = Table(title="Todo List")
 
-    table.add_column("Creation Date", justify="right", style="cyan", no_wrap=True)
+    table.add_column("Creation", justify="center", style="cyan", no_wrap=True)
     table.add_column("Title", style="magenta")
     table.add_column("Description", justify="right", style="green")
 
     for item in todos:
         table.add_row(
-            item["target"]["created_at"], item["target"]["title"], item["body"]
+            item["target"]["created_at"][:10], item["target"]["title"], item["body"]
         )
 
     console = Console()
